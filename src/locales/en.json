@@ -1,0 +1,46 @@
+{
+  "appTitle": "Carrera Hybrid Tracks",
+  "navigation": {
+    "title": "CHT",
+    "home": "Home",
+    "tracks": "Tracks"
+  },
+  "home": {
+    "title": "Welcome to Carrera Hybrid Tracks",
+    "welcome": "Build your own tracks and share them with the community.<br>Use the <a href=\"tracks#/tracks\" style=\"text-decoration: underline;\">track editor</a> to design, customize, and export your creations.<br><br><a href=\"https://github.com/sonycrow/carrera-hybrid-tracks\" style=\"text-decoration: underline;\">Visit our repository</a> for more information."
+  },
+  "tracks": {
+    "title": "Tracks",
+    "welcome": "Explore and create your own tracks."
+  },
+  "trackSection": {
+    "start": "Start",
+    "curve-left": "Left Curve",
+    "curve-right": "Right Curve",
+    "straight": "Straight",
+    "narrow": "Narrow"
+  },
+  "trackEditor": {
+    "urlCopied": "URL copied to clipboard!",
+    "urlCopiedError": "Error copying URL",
+    "loadInventoryError": "Error loading inventory from URL",
+    "loadCircuitError": "Error loading circuit from URL",
+    "sections": "Sections",
+    "totalSections": "Total:",
+    "availableSections": "/",
+    "controlsSections": "Controls",
+    "dragDropSections": "Drag and drop",
+    "rightClickSections": "Right click",
+    "doubleClickSections": "Double click",
+    "dragDropSectionsAction": "Add/move.",
+    "rightClickSectionsAction": "Rotate.",
+    "doubleClickSectionsAction": "Delete.",
+    "total": "Total:",
+    "columns": "Columns:",
+    "rows": "Rows:",
+    "showGrid": "Show Grid",
+    "length": "Length:",
+    "copyUrlButton": "Copy URL",
+    "exportToPngButton": "Export to PNG"
+  }
+}
