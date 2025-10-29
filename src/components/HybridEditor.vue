@@ -7,15 +7,15 @@ import html2canvas from 'html2canvas';
 const { t } = useI18n();
 
 const getImageUrl = (name) => {
-  return new URL(`/src/assets/sections/${name}.png`, import.meta.url).href;
+  return new URL(`/src/assets/hybrid/${name}.png`, import.meta.url).href;
 };
 
 const sections = ref([
-  { name: t('trackSection.start'), path: getImageUrl('start') },
-  { name: t('trackSection.straight'), path: getImageUrl('straight') },
-  { name: t('trackSection.narrow'), path: getImageUrl('narrow') },
-  { name: t('trackSection.curve-left'), path: getImageUrl('curve-left') },
-  { name: t('trackSection.curve-right'), path: getImageUrl('curve-right') },
+  { name: t('hybridSection.start'), path: getImageUrl('start') },
+  { name: t('hybridSection.straight'), path: getImageUrl('straight') },
+  { name: t('hybridSection.narrow'), path: getImageUrl('narrow') },
+  { name: t('hybridSection.curve-left'), path: getImageUrl('curve-left') },
+  { name: t('hybridSection.curve-right'), path: getImageUrl('curve-right') },
 ]);
 
 const inventory = ref({});
@@ -95,7 +95,7 @@ const onDrop = (toIndex) => {
     return;
   }
 
-  if (draggedFromIndex === null) { // Dragging from sidebar
+  if (draggedFromIndex === null) {
     if (availableSections.value[draggedSection.name] <= 0) {
       draggedSection = null;
       return;
@@ -160,7 +160,7 @@ const exportToPNG = async () => {
     height: height,
   }).then(canvas => {
     const link = document.createElement('a');
-    link.download = 'circuit-design.png';
+    link.download = 'hybrid-circuit-design.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
 
@@ -171,12 +171,12 @@ const exportToPNG = async () => {
 const copyUrl = () => {
   navigator.clipboard.writeText(window.location.href)
     .then(() => {
-      alert($t('trackEditor.urlCopied'));
-      console.log($t('trackEditor.urlCopied'));
+      alert($t('hybridEditor.urlCopied'));
+      console.log($t('hybridEditor.urlCopied'));
     })
     .catch(err => {
-      alert($t('trackEditor.urlCopiedError'));
-      console.error($t('trackEditor.urlCopiedError'), err);
+      alert($t('hybridEditor.urlCopiedError'));
+      console.error($t('hybridEditor.urlCopiedError'), err);
     });
 };
 
@@ -226,7 +226,7 @@ onMounted(() => {
       const jsonString = atob(inventoryData);
       Object.assign(inventory.value, JSON.parse(jsonString));
     } catch (e) {
-      console.error($t('trackEditor.loadInventoryError'), e);
+      console.error($t('hybridEditor.loadInventoryError'), e);
     }
   }
 
@@ -247,7 +247,7 @@ onMounted(() => {
       });
       circuit.value = newCircuit;
     } catch (e) {
-      console.error($t('trackEditor.loadCircuitError'), e);
+      console.error($t('hybridEditor.loadCircuitError'), e);
       router.push({ query: {} });
     }
   }
@@ -258,7 +258,7 @@ onMounted(() => {
 <template>
   <div class="flex h-screen">
     <div class="w-1/4 pt-4 pr-4 overflow-y-auto">
-      <h2 class="text-lg font-bold mb-2">{{ $t('trackEditor.sections') }}</h2>
+      <h2 class="text-lg font-bold mb-2">{{ $t('hybridEditor.sections') }}</h2>
       <div class="grid grid-cols-2 gap-2">
         <div
           v-for="section in sections"
@@ -278,22 +278,22 @@ onMounted(() => {
           
           <div class="flex items-center justify-center mt-2 text-xs">
             <div class="flex items-center">
-              <span class="mr-1">{{ $t('trackEditor.total') }}</span>
+              <span class="mr-1">{{ $t('hybridEditor.total') }}</span>
               <input type="number" min="0" v-model.number="inventory[section.name]" @click.stop class="w-11 p-1 border rounded text-sm">
             </div>
             <div>
-              <span class="font-bold pl-2">{{ $t('trackEditor.availableSections') }} {{ availableSections[section.name] }}</span>
+              <span class="font-bold pl-2">{{ $t('hybridEditor.availableSections') }} {{ availableSections[section.name] }}</span>
             </div>
           </div>
         </div>
       </div>
 
       <div class="mt-8 p-4 border rounded bg-gray-50">
-        <h3 class="text-md font-bold mb-2">{{ $t('trackEditor.controlsSections') }}</h3>
+        <h3 class="text-md font-bold mb-2">{{ $t('hybridEditor.controlsSections') }}</h3>
         <ul class="list-disc list-inside text-sm space-y-1">
-          <li><strong>{{ $t('trackEditor.dragDropSections') }}</strong> {{ $t('trackEditor.dragDropSectionsAction') }}</li>
-          <li><strong>{{ $t('trackEditor.rightClickSections') }}</strong> {{ $t('trackEditor.rightClickSectionsAction') }}</li>
-          <li><strong>{{ $t('trackEditor.doubleClickSections') }}</strong> {{ $t('trackEditor.doubleClickSectionsAction') }}</li>
+          <li><strong>{{ $t('hybridEditor.dragDropSections') }}</strong> {{ $t('hybridEditor.dragDropSectionsAction') }}</li>
+          <li><strong>{{ $t('hybridEditor.rightClickSections') }}</strong> {{ $t('hybridEditor.rightClickSectionsAction') }}</li>
+          <li><strong>{{ $t('hybridEditor.doubleClickSections') }}</strong> {{ $t('hybridEditor.doubleClickSectionsAction') }}</li>
         </ul>
       </div>
 
@@ -304,27 +304,27 @@ onMounted(() => {
     >
       <div class="flex justify-between items-center mb-4 shrink-0">
         <div class="flex items-center gap-2">
-          <span class="text-sm">{{ $t('trackEditor.columns') }}</span>
+          <span class="text-sm">{{ $t('hybridEditor.columns') }}</span>
           <input type="number" min="1" v-model.number="numCols" class="w-16 p-1 border rounded text-sm">
-          <span class_="text-sm">{{ $t('trackEditor.rows') }}</span>
+          <span class="text-sm">{{ $t('hybridEditor.rows') }}</span>
           <input type="number" min="1" v-model.number="numRows" class="w-16 p-1 border rounded text-sm">
-          <label for="showGrid" class="text-sm">{{ $t('trackEditor.showGrid') }}</label>
+          <label for="showGrid" class="text-sm">{{ $t('hybridEditor.showGrid') }}</label>
           <input type="checkbox" id="showGrid" v-model="showGrid" class="w-4 h-4">
         </div>
         <div class="flex items-center gap-4">
           <div class="text-lg">
-            {{ $t('trackEditor.total') }} <strong>{{ usedSectionsCount }}</strong>
+            {{ $t('hybridEditor.total') }} <strong>{{ usedSectionsCount }}</strong>
           </div>
           <div class="text-lg">
-            {{ $t('trackEditor.length') }} <strong>{{ trackLength }} m</strong>
+            {{ $t('hybridEditor.length') }} <strong>{{ trackLength }} m</strong>
           </div>
           <div class="flex flex-wrap gap-2 text-xs">
               <div v-for="(count, name) in sectionCounts" :key="name" class="p-1 border rounded bg-gray-100">
                 {{ name }}: <strong>{{ count }}</strong>
               </div>
           </div>
-          <button @click="copyUrl" class="p-2 border rounded bg-blue-500 text-white text-sm">{{ $t('trackEditor.copyUrlButton') }}</button>
-          <button @click="exportToPNG" class="p-2 border rounded bg-green-500 text-white text-sm">{{ $t('trackEditor.exportToPngButton') }}</button>
+          <button @click="copyUrl" class="p-2 border rounded bg-blue-500 text-white text-sm">{{ $t('hybridEditor.copyUrlButton') }}</button>
+          <button @click="exportToPNG" class="p-2 border rounded bg-green-500 text-white text-sm">{{ $t('hybridEditor.exportToPngButton') }}</button>
         </div>
       </div>
       <div class="flex-grow overflow-auto border rounded p-4">
@@ -386,7 +386,7 @@ onMounted(() => {
 .hexagon {
     width: var(--hex-width);
     height: var(--hex-height);
-    background-color: rgba(0,0,0,0.06);
+    background-color: rgba(0,0,0,0.04);
     margin: calc(var(--hex-margin) / 2);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;

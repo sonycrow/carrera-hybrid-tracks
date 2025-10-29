@@ -3,24 +3,23 @@
   "navigation": {
     "title": "CHT",
     "home": "Home",
-    "tracks": "Tracks"
+    "hybrid": "Hybrid",
+    "foam": "Foam"
   },
   "home": {
     "title": "Welcome to Carrera Hybrid Tracks",
-    "welcome": "Build your own tracks and share them with the community.<br>Use the <a href=\"tracks#/tracks\" style=\"text-decoration: underline;\">track editor</a> to design, customize, and export your creations.<br><br><a href=\"https://github.com/sonycrow/carrera-hybrid-tracks\" style=\"text-decoration: underline;\">Visit our repository</a> for more information."
+    "welcome": "Build your own circuits and share them with the community:<br><ul><li>You have the <a href=\"hybrid#/hybrid\" style=\"text-decoration: underline;\">Hybrid circuit editor</a> to design, customize, and export your creations using Carrera Hybrid sections.</li><li>Or if you prefer free mode, use the <a href=\"foam#/foam\" style=\"text-decoration: underline;\">Foam circuit editor</a> to create spectacular tracks.</li></ul><br><a href=\"https://github.com/sonycrow/carrera-hybrid-tracks\" style=\"text-decoration: underline;\">Visit our repository</a> for more information."
   },
-  "tracks": {
-    "title": "Tracks",
-    "welcome": "Explore and create your own tracks."
-  },
-  "trackSection": {
+  "hybridSection": {
     "start": "Start",
-    "curve-left": "Left Curve",
-    "curve-right": "Right Curve",
+    "curve-left": "Curve Left",
+    "curve-right": "Curve Right",
     "straight": "Straight",
     "narrow": "Narrow"
   },
-  "trackEditor": {
+  "hybridEditor": {
+    "title": "Hybrid Circuits",
+    "welcome": "Explore and create your own circuits with your Hybrid track sections.",
     "urlCopied": "URL copied to clipboard!",
     "urlCopiedError": "Error copying URL",
     "loadInventoryError": "Error loading inventory from URL",
@@ -40,6 +39,43 @@
     "rows": "Rows:",
     "showGrid": "Show Grid",
     "length": "Length:",
+    "copyUrlButton": "Copy URL",
+    "exportToPngButton": "Export to PNG"
+  },
+  "foam": {
+    "title": "Freestyle Tracks",
+    "welcome": "Explore and create your own freestyle tracks with EVA (foam) tiles."
+  },
+  "foamSection": {
+    "clean": "Clean",
+    "one": "Border",
+    "two": "Lane",
+    "corner": "Corner",
+    "three": "Open",
+    "close": "Close"
+  },
+  "foamEditor": {
+    "title": "Freestyle Tracks",
+    "welcome": "Explore and create your own freestyle tracks with foam tiles.",
+    "section": "Foam Tile",
+    "urlCopied": "URL copied to clipboard!",
+    "urlCopiedError": "Error copying URL",
+    "loadInventoryError": "Error loading inventory from URL",
+    "loadCircuitError": "Error loading circuit from URL",
+    "sections": "Sections",
+    "totalSections": "Total:",
+    "availableSections": "/",
+    "controlsSections": "Controls",
+    "dragDropSections": "Drag and drop",
+    "rightClickSections": "Right click",
+    "doubleClickSections": "Double click",
+    "dragDropSectionsAction": "Add/move.",
+    "rightClickSectionsAction": "Rotate.",
+    "doubleClickSectionsAction": "Delete.",
+    "total": "Total:",
+    "columns": "Columns:",
+    "rows": "Rows:",
+    "showGrid": "Show Grid",
     "copyUrlButton": "Copy URL",
     "exportToPngButton": "Export to PNG"
   }

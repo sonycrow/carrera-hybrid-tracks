@@ -7,7 +7,8 @@ defineEmits(['close']);
 
 const menuItems = [
   { name: 'navigation.home', path: '/home' },
-  { name: 'navigation.tracks', path: '/tracks' }
+  { name: 'navigation.hybrid', path: '/hybrid' },
+  { name: 'navigation.foam', path: '/foam' }
 ];
 </script>
 

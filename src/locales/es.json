@@ -3,24 +3,23 @@
   "navigation": {
     "title": "CHT",
     "home": "Inicio",
-    "tracks": "Circuitos"
+    "hybrid": "Hybrid",
+    "foam": "EVA (Foam)"
   },
   "home": {
     "title": "Bienvenido a Carrera Hybrid Tracks",
-    "welcome": "Construye tus propios circuitos y compártelos con la comunidad.<br>Usa el <a href=\"tracks#/tracks\" style=\"text-decoration: underline;\">editor de circuitos</a> para diseñar, personalizar y exportar tus creaciones.<br><br><a href=\"https://github.com/sonycrow/carrera-hybrid-tracks\" style=\"text-decoration: underline;\">Visita nuestro repositorio</a> para más información."
+    "welcome": "Construye tus propios circuitos y compártelos con la comunidad:<br><ul><li>Tienes <a href=\"hybrid#/hybrid\" style=\"text-decoration: underline;\">editor de circuitos de Hybrid</a> para diseñar, personalizar y exportar tus creaciones utilizando las secciones de Carrera Hybrid.</li><li>O si prefieres el modo libre, usa el <a href=\"foam#/foam\" style=\"text-decoration: underline;\">editor de circuitos de EVA (Foam)</a> para crear pistas espectaculares.</li></ul><br><a href=\"https://github.com/sonycrow/carrera-hybrid-tracks\" style=\"text-decoration: underline;\">Visita nuestro repositorio</a> para más información."
   },
-  "tracks": {
-    "title": "Circuitos",
-    "welcome": "Explora y crea tus propios circuitos."
-  },
-  "trackSection": {
+  "hybridSection": {
     "start": "Salida",
     "curve-left": "Curva Izquierda",
     "curve-right": "Curva Derecha",
     "straight": "Recta",
     "narrow": "Estrecho"
   },
-  "trackEditor": {
+  "hybridEditor": {
+    "title": "Circuitos Hybrid",
+    "welcome": "Explora y crea tus propios circuitos con tus secciones de pista Hybrid.",
     "urlCopied": "URL copiada al portapapeles!",
     "urlCopiedError": "Error al copiar la URL",
     "loadInventoryError": "Error al cargar el inventario desde la URL",
@@ -40,6 +39,43 @@
     "rows": "Filas:",
     "showGrid": "Mostrar Grid",
     "length": "Longitud:",
+    "copyUrlButton": "Copiar URL",
+    "exportToPngButton": "Exportar a PNG"
+  },
+  "foam": {
+    "title": "Pistas libres",
+    "welcome": "Explora y crea tus propias pistas libres con losetas EVA (foam)."
+  },
+  "foamSection": {
+    "clean": "Limpio",
+    "one": "Borde",
+    "two": "Carril",
+    "corner": "Esquina",
+    "three": "Abierto",
+    "close": "Cerrado"
+  },
+  "foamEditor": {
+    "title": "Pistas libres",
+    "welcome": "Explora y crea tus propias pistas libres con losetas EVA (foam).",
+    "section": "Loseta de Goma EVA",
+    "urlCopied": "¡URL copiada al portapapeles!",
+    "urlCopiedError": "Error al copiar la URL",
+    "loadInventoryError": "Error al cargar el inventario desde la URL",
+    "loadCircuitError": "Error al cargar el circuito desde la URL",
+    "sections": "Secciones",
+    "totalSections": "Total:",
+    "availableSections": "/",
+    "controlsSections": "Controles",
+    "dragDropSections": "Arrastrar y soltar",
+    "rightClickSections": "Click derecho",
+    "doubleClickSections": "Doble click",
+    "dragDropSectionsAction": "Añadir/mover.",
+    "rightClickSectionsAction": "Rotar.",
+    "doubleClickSectionsAction": "Eliminar.",
+    "total": "Total:",
+    "columns": "Columnas:",
+    "rows": "Filas:",
+    "showGrid": "Mostrar Grid",
     "copyUrlButton": "Copiar URL",
     "exportToPngButton": "Exportar a PNG"
   }
